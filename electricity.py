@@ -38,7 +38,7 @@ if __name__ == "__main__":
 
       model.to(device)
     
-    trainer = Trainer(args,ds_parser,model)
+      trainer = Trainer(args,ds_parser,model)
 
     #Training Loop
     start_time = time()
