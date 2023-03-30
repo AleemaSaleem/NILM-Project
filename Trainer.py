@@ -13,12 +13,22 @@ from   metrics             import *
 
 class Trainer:
     def __init__(self,args,ds_parser,model):
+
+        device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    
+        #if torch.cuda.device_count() > 1:
+            #print("Let's use", torch.cuda.device_count(), "GPUs!")
+            #dim = 0 [30, xxx] -> [10, ...], [10, ...], [10, ...] on 3 GPUs
+        
+        model = nn.DataParallel(model)
+        model.to(device)
+
         self.args                = args
-        self.device              = args.device
+        self.device              = device
         self.pretrain            = args.pretrain
         self.pretrain_num_epochs = args.pretrain_num_epochs
         self.num_epochs          = args.num_epochs
-        self.model               = model.to(args.device)
+        self.model               = model.to(device)
         self.export_root         = Path(args.export_root).joinpath(args.dataset_code).joinpath(args.appliance_names[0])
         self.best_model_epoch    = None
 
