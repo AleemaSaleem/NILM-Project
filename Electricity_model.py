@@ -75,9 +75,10 @@ class ELECTRICITY(nn.Module):
 
     def forward(self,sequence,mask=None):
         if self.pretrain:
-            gen_out = self.Generator(sequence)
-            disc_in = sequence
-            disc_in[mask] = gen_out[mask]
+            with torch.no_grad():
+                gen_out = self.Generator(sequence)
+                disc_in = sequence
+                disc_in[mask] = gen_out[mask]
         else:
             disc_in = sequence
         disc_out = self.Discriminator(disc_in)
