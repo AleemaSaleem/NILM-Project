@@ -376,3 +376,19 @@ class Trainer:
             total_loss += self.C0 * loss_l1_on / total_size
         return total_loss
 
+    import os
+    #import torch
+    #import json
+    import pickle
+    from IPython.display import FileLink
+   
+    os.chdir(r'/kaggle/working')
+    
+    data = {'gt': self.y_curve.tolist(),'pred': self.y_pred_curve.tolist()}
+    with open(r'/kaggle/working/NILM-Project/results/refit/TV/test_result.json', 'w') as f:
+        json.dump(data, f)
+    FileLink(r'/kaggle/working/NILM-Project/results/refit/TV/test_result.json')
+    
+    torch.save(best_acc_model.state_dict(), r'/kaggle/working/NILM-Project/results/refit/TV/best_acc_model.pth')
+    #from IPython.display import FileLink
+    FileLink(r'best_acc_model.pth')
