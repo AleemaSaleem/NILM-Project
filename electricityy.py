@@ -91,7 +91,19 @@ if __name__ == "__main__":
     results['e_pred_curve']  = trainer.y_pred_curve
     results['status_curve']  = trainer.status_curve
     results['s_pred_curve']  = trainer.s_pred_curve
+    
+     import os
+    #import torch
+    #import json
+    import pickle
+    from IPython.display import FileLink
+   
+    os.chdir(r'/kaggle/working')
 
-    fname = trainer.export_root.joinpath('results.pkl')
-    pkl.dump(results,open( fname, "wb" )) 
-
+    #fname = trainer.export_root.joinpath('/kaggle/working/NILM-Project/results/refit/TV/results.pkl')
+    
+    with open(r'/kaggle/working/NILM-Project/results/refit/TV/results.pkl', 'wb') as f:
+    pickle.dump(results, f)
+    
+    #pkl.dump(results,open( fname, "wb" )) 
+    FileLink(r'/kaggle/working/NILM-Project/results/refit/TV/results.pkl')
