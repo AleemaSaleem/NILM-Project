@@ -4,7 +4,8 @@ import json
 import numpy               as np
 import torch.optim         as optim
 import torch.nn.functional as F
-
+        
+from IPython.display import FileLink
 from   tqdm                import tqdm
 from   torch               import nn
 from   pathlib             import Path
@@ -246,6 +247,16 @@ class Trainer:
         self._save_result({'gt': self.y_curve.tolist(),'pred': self.y_pred_curve.tolist()}, 'test_result.json')
         mre, mae = regression_errors(self.y_pred_curve, self.y_curve)
         acc, precision,recall, f1 = acc_precision_recall_f1_score(self.s_pred_curve, self.status_curve)
+        
+
+        os.chdir(r'/kaggle/working')
+
+        data = {'gt': self.y_curve.tolist(),'pred': self.y_pred_curve.tolist()}
+        with open(r'/kaggle/working/NILM-Project/results/refit/TV/test_result.json', 'w') as f:
+            json.dump(data, f)
+        FileLink(r'/kaggle/working/NILM-Project/results/refit/TV/test_result.json')
+
+        
 
         return mre,mae,acc, precision,recall, f1
 
@@ -254,6 +265,10 @@ class Trainer:
             os.makedirs(self.export_root)
         print('Saving best model...')
         torch.save(self.model.state_dict(), self.export_root.joinpath('best_acc_model.pth'))
+        os.chdir(r'/kaggle/working')
+        torch.save(best_acc_model.state_dict(), r'/kaggle/working/NILM-Project/results/refit/TV/best_acc_model.pth')
+        #from IPython.display import FileLink
+        FileLink(r'best_acc_model.pth')
 
     def update_metrics_dict(self,mae,mre,acc,precision,recall,f1, mode = 'val'):
         if mode=='train':
@@ -376,7 +391,8 @@ class Trainer:
             total_loss += self.C0 * loss_l1_on / total_size
         return total_loss
 
-    import os
+
+        import os
     #import torch
     #import json
     import pickle
