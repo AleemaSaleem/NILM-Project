@@ -42,12 +42,15 @@ if __name__ == "__main__":
     if args.num_epochs > 0:
         try:
             
-            model_path = '/kaggle/working/NILM-Project/results/refit/TV'
-            state_dict_path = os.path.join(model_path, 'best_acc_model.pth')
-            model.load_state_dict(torch.load(state_dict_path))
+           # model_path = '/kaggle/working/NILM-Project/results/refit/TV'
+            #state_dict_path = os.path.join(model_path, 'best_acc_model.pth')
+           # model.load_state_dict(torch.load(state_dict_path))
             #model.load_state_dict(torch.load(state_dict_path, map_location='cpu'))
             
             #model.load_state_dict(torch.load(os.path.join(trainer.export_root, 'best_acc_model.pth'), map_location='cpu'))
+            
+            model.load_state_dict(torch.load(os.path.join(trainer.export_root, 'best_acc_model.pth')))
+            
             print('Successfully loaded previous model, continue training...')
         except FileNotFoundError:
             print('Failed to load old model, continue training new model...')
