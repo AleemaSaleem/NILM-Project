@@ -30,7 +30,8 @@ class Trainer:
         self.pretrain_num_epochs = args.pretrain_num_epochs
         self.num_epochs          = args.num_epochs
         self.model               = model.to(device)
-        self.export_root         = Path(args.export_root).joinpath(args.dataset_code).joinpath(args.appliance_names[0])
+        self.export_root         = '/kaggle/working/NILM-Project/results/refit/TV'
+        #self.export_root         = Path(args.export_root).joinpath(args.dataset_code).joinpath(args.appliance_names[0])
         self.best_model_epoch    = None
 
         self.cutoff      = torch.tensor(args.cutoff[args.appliance_names[0]]    ).to(self.device)
