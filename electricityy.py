@@ -1,4 +1,5 @@
 import torch
+import os
 torch.set_default_tensor_type(torch.DoubleTensor)
 
 # import argparse
@@ -38,7 +39,12 @@ if __name__ == "__main__":
     start_time = time()
     if args.num_epochs > 0:
         try:
-            model.load_state_dict(torch.load(os.path.join(trainer.export_root, 'best_acc_model.pth'), map_location='cpu'))
+            
+            model_path = '/kaggle/working/NILM-Project/results/refit/TV'
+            state_dict_path = os.path.join(model_path, 'best_acc_model.pth')
+            model.load_state_dict(torch.load(state_dict_path, map_location='cpu'))
+            
+            #model.load_state_dict(torch.load(os.path.join(trainer.export_root, 'best_acc_model.pth'), map_location='cpu'))
             print('Successfully loaded previous model, continue training...')
         except FileNotFoundError:
             print('Failed to load old model, continue training new model...')
@@ -92,7 +98,7 @@ if __name__ == "__main__":
     results['status_curve']  = trainer.status_curve
     results['s_pred_curve']  = trainer.s_pred_curve
     
-    import os
+    #import os
     #import torch
     #import json
     #import pickle
