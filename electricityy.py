@@ -32,6 +32,8 @@ if __name__ == "__main__":
         ds_parser = Refit_Parser(args)
 
     model = ELECTRICITY(args)
+    print(model.state_dict().keys())
+
     
     trainer = Trainer(args,ds_parser,model)
 
