@@ -49,7 +49,7 @@ if __name__ == "__main__":
             
             #model.load_state_dict(torch.load(os.path.join(trainer.export_root, 'best_acc_model.pth'), map_location='cpu'))
             
-            model.load_state_dict(torch.load(os.path.join(trainer.export_root, 'best_acc_model.pth'), map_location='cpu'))
+            model.load_state_dict(torch.load(os.path.join(trainer.export_root, 'best_acc_model.pth')))
             
             print('Successfully loaded previous model, continue training...')
         except FileNotFoundError:
