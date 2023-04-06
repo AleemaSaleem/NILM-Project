@@ -268,10 +268,10 @@ class Trainer:
         torch.save(self.model.module.state_dict(), self.export_root.joinpath('best_acc_model.pth')) 
         #torch.save(self.model.state_dict(), self.export_root.joinpath('best_acc_model.pth'))
         
-        #os.chdir(r'/kaggle/working')
-       # torch.save(best_acc_model.state_dict(), r'/kaggle/working/NILM-Project/results/refit/TV/best_acc_model.pth')
-        #from IPython.display import FileLink
-        #FileLink(r'best_acc_model.pth')
+        os.chdir(r'/kaggle/working')
+        torch.save(best_acc_model.state_dict(), r'/kaggle/working/NILM-Project/results/refit/TV/best_acc_model.pth')
+        from IPython.display import FileLink
+        FileLink(r'best_acc_model.pth')
 
     def update_metrics_dict(self,mae,mre,acc,precision,recall,f1, mode = 'val'):
         if mode=='train':
