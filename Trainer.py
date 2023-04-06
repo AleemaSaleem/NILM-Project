@@ -30,8 +30,8 @@ class Trainer:
         self.pretrain_num_epochs = args.pretrain_num_epochs
         self.num_epochs          = args.num_epochs
         self.model               = model.to(device)
-        self.export_root         = '/kaggle/working/NILM-Project/results/refit/TV'
-        #self.export_root         = Path(args.export_root).joinpath(args.dataset_code).joinpath(args.appliance_names[0])
+        #self.export_root         = '/kaggle/working/NILM-Project/results/refit/TV'
+        self.export_root         = Path(args.export_root).joinpath(args.dataset_code).joinpath(args.appliance_names[0])
         self.best_model_epoch    = None
 
         self.cutoff      = torch.tensor(args.cutoff[args.appliance_names[0]]    ).to(self.device)
@@ -266,10 +266,10 @@ class Trainer:
             os.makedirs(self.export_root)
         print('Saving best model...')
         torch.save(self.model.state_dict(), self.export_root.joinpath('best_acc_model.pth'))
-        os.chdir(r'/kaggle/working')
-        torch.save(best_acc_model.state_dict(), r'/kaggle/working/NILM-Project/results/refit/TV/best_acc_model.pth')
+        #os.chdir(r'/kaggle/working')
+       # torch.save(best_acc_model.state_dict(), r'/kaggle/working/NILM-Project/results/refit/TV/best_acc_model.pth')
         #from IPython.display import FileLink
-        FileLink(r'best_acc_model.pth')
+        #FileLink(r'best_acc_model.pth')
 
     def update_metrics_dict(self,mae,mre,acc,precision,recall,f1, mode = 'val'):
         if mode=='train':
