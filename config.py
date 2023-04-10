@@ -15,7 +15,7 @@ def get_args():
     parser.add_argument('--device',             type = str,   default = 'cpu' ,    choices=['cpu', 'cuda'])
 
     parser.add_argument('--dataset_code',       type = str,   default = 'refit', choices=['redd_lf', 'uk_dale','refit'])
-    parser.add_argument('--house_indicies',     type = list,  default = [1, 2, 3, 4, 5])
+    parser.add_argument('--house_indicies',     type = list,  default = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21])
 
     #REDD Dataset appliance names:    'refrigerator', 'washer_dryer',   'microwave','dishwasher'
      #UK Dale Dataset appliance names: 'fridge',       'washing_machine','microwave','dishwasher','kettle','toaster'
