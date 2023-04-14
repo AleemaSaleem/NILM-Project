@@ -265,8 +265,8 @@ class Trainer:
         if not os.path.exists(self.export_root):
             os.makedirs(self.export_root)
         print('Saving best model...')
-        #torch.save(self.model.module.state_dict(), self.export_root.joinpath('best_acc_model.pth')) 
-        torch.save(self.model.state_dict(), self.export_root.joinpath('best_acc_model.pth'))
+        torch.save(self.model.module.state_dict(), self.export_root.joinpath('best_acc_model.pth')) 
+        #torch.save(self.model.state_dict(), self.export_root.joinpath('best_acc_model.pth'))
         
         os.chdir(r'/kaggle/working')
         torch.save(best_acc_model.state_dict(), r'/kaggle/working/NILM-Project/results/refit/Fridge-Freezer/best_acc_model.pth')
@@ -336,8 +336,8 @@ class Trainer:
         if not os.path.exists(self.export_root):
             os.makedirs(self.export_root)
         print('Saving best model...')
-        #torch.save(self.model.module.state_dict(), self.export_root.joinpath('best_acc_model.pth')) 
-        torch.save(self.model.state_dict(), self.export_root.joinpath('best_acc_model.pth'))
+        torch.save(self.model.module.state_dict(), self.export_root.joinpath('best_acc_model.pth')) 
+        #torch.save(self.model.state_dict(), self.export_root.joinpath('best_acc_model.pth'))
 
     def _load_best_model(self):
         try:
