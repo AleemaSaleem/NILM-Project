@@ -103,7 +103,7 @@ class Trainer:
 
     def train(self):
         if self.export_root is not None:                                 
-           self.load_state_dict(torch.load(self.export_root.joinpath('best_acc_model.pth')))           
+           self.model.load_state_dict(torch.load(self.export_root.joinpath('best_acc_model.pth')))           
         else:                                                                                           
             _, best_mre, best_acc, _, _, best_f1 = self.validate()
             self._save_state_dict()
