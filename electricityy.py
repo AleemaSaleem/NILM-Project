@@ -83,8 +83,8 @@ if __name__ == "__main__":
     mre, mae, acc, prec, recall, f1 = trainer.test(test_loader)
     print('Mean Accuracy:', acc)
     print('Mean F1-Score:', f1)
-    print('MAE:', mae)
-    print('MRE:', mre)
+    print('MRE:', mae)
+    print('MAE:', mre)
 
     results = dict()
 
