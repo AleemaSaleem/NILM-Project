@@ -296,9 +296,9 @@ class Trainer:
         os.chdir(r'/kaggle/working')
 
         data = {'gt': self.y_curve.tolist(),'pred': self.y_pred_curve.tolist()}
-        with open(r'/kaggle/working/NILM-Project/results/refit/TV/test_result.json', 'w') as f:
+        with open(r'/kaggle/working/NILM-Project/results/refit/Fridge-Freezer/test_result.json', 'w') as f:
             json.dump(data, f)
-        FileLink(r'/kaggle/working/NILM-Project/results/refit/TV/test_result.json')
+        FileLink(r'/kaggle/working/NILM-Project/results/refit/Fridge-Freezer/test_result.json')
 
         
 
