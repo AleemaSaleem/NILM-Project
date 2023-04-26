@@ -103,66 +103,66 @@ class Trainer:
 
     def train(self):
 
-        if self.export_root is not None:
-            self.model.module.load_state_dict(torch.load(self.export_root.joinpath('best_acc_model.pth')))
+      #  if self.export_root is not None:
+      #      self.model.module.load_state_dict(torch.load(self.export_root.joinpath('best_acc_model.pth')))
+      #      _, best_mre, best_acc, _, _, best_f1 = self.validate()
+      #  else:
+       #     self._save_state_dict()
+       #     _, best_mre, best_acc, _, _, best_f1 = self.validate()
+
+    #    best_f1_prev = best_f1
+    #    best_acc_prev = best_acc
+    #    best_mre_prev = best_mre
+
+     #   if self.pretrain:
+         #   for epoch in range(self.pretrain_num_epochs):
+          #      self.pretrain_one_epoch(epoch+1)
+
+       # self.model.pretrain = False
+
+     #   for epoch in range(self.num_epochs):
+        #    self.train_one_epoch(epoch+1)
+        #    mae, mre, acc, precision, recall, f1 = self.validate()
+        #    self.update_metrics_dict(mae, mre, acc, precision, recall, f1, mode='train')
+
+        #    if f1 + acc - mre > best_f1 + best_acc - best_mre:
+        #        best_f1_prev = best_f1
+        #        best_acc_prev = best_acc
+        #        best_mre_prev = best_mre
+
+         #       best_f1 = f1
+         #       best_acc = acc
+         #       best_mre = mre
+         #       self.best_model_epoch = epoch
+         #       self._save_state_dict()
+
+        #    elif f1 + acc - mre > best_f1_prev + best_acc_prev - best_mre_prev:
+        #        self._save_state_dict() 
+            
+
+        
+        if self.export_root is not None:                                 
+           self.model.module.load_state_dict(torch.load(self.export_root.joinpath('best_acc_model.pth')))           
+        else:                                                                                           
             _, best_mre, best_acc, _, _, best_f1 = self.validate()
-        else:
             self._save_state_dict()
-            _, best_mre, best_acc, _, _, best_f1 = self.validate()
-
-        best_f1_prev = best_f1
-        best_acc_prev = best_acc
-        best_mre_prev = best_mre
-
+                
         if self.pretrain:
             for epoch in range(self.pretrain_num_epochs):
                 self.pretrain_one_epoch(epoch+1)
 
         self.model.pretrain = False
-
         for epoch in range(self.num_epochs):
             self.train_one_epoch(epoch+1)
             mae, mre, acc, precision, recall, f1 = self.validate()
-            self.update_metrics_dict(mae, mre, acc, precision, recall, f1, mode='train')
+            self.update_metrics_dict(mae, mre, acc, precision, recall, f1, mode = 'train')
 
             if f1 + acc - mre > best_f1 + best_acc - best_mre:
-                best_f1_prev = best_f1
-                best_acc_prev = best_acc
-                best_mre_prev = best_mre
-
-                best_f1 = f1
-                best_acc = acc
-                best_mre = mre
+                best_f1      = f1
+                best_acc     = acc
+                best_mre     = mre
                 self.best_model_epoch = epoch
-                self._save_state_dict()
-
-            elif f1 + acc - mre > best_f1_prev + best_acc_prev - best_mre_prev:
-                self._save_state_dict() 
-            
-
-        
-     #   if self.export_root is not None:                                 
-   #        self.model.module.load_state_dict(torch.load(self.export_root.joinpath('best_acc_model.pth')))           
-     #   else:                                                                                           
-       #     _, best_mre, best_acc, _, _, best_f1 = self.validate()
-       #     self._save_state_dict()
-                
-     #   if self.pretrain:
-       #     for epoch in range(self.pretrain_num_epochs):
-        #        self.pretrain_one_epoch(epoch+1)
-
-      #  self.model.pretrain = False
-     #   for epoch in range(self.num_epochs):
-      #      self.train_one_epoch(epoch+1)
-       #     mae, mre, acc, precision, recall, f1 = self.validate()
-       #     self.update_metrics_dict(mae, mre, acc, precision, recall, f1, mode = 'train')
-
-       #     if f1 + acc - mre > best_f1 + best_acc - best_mre:
-       #         best_f1      = f1
-        #        best_acc     = acc
-        #        best_mre     = mre
-        #        self.best_model_epoch = epoch
-        #        self._save_state_dict()   
+                self._save_state_dict()   
     
     def pretrain_one_epoch(self,epoch):
         loss_values = []
