@@ -138,15 +138,9 @@ class Trainer:
 
         #    elif f1 + acc - mre > best_f1_prev + best_acc_prev - best_mre_prev:
         #        self._save_state_dict() 
-            
 
-        
-        if self.export_root is not None:                                 
-           self.model.module.load_state_dict(torch.load(self.export_root.joinpath('best_acc_model.pth')))           
-        else:                                                                                           
-            _, best_mre, best_acc, _, _, best_f1 = self.validate()
-            self._save_state_dict()
-                
+         _, best_mre, best_acc, _, _, best_f1 = self.validate()
+        self._save_state_dict()
         if self.pretrain:
             for epoch in range(self.pretrain_num_epochs):
                 self.pretrain_one_epoch(epoch+1)
@@ -162,7 +156,7 @@ class Trainer:
                 best_acc     = acc
                 best_mre     = mre
                 self.best_model_epoch = epoch
-                self._save_state_dict()   
+                self._save_state_dict()       
     
     def pretrain_one_epoch(self,epoch):
         loss_values = []
