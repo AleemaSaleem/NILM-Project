@@ -114,8 +114,8 @@ if __name__ == "__main__":
 
     #fname = trainer.export_root.joinpath('/kaggle/working/NILM-Project/results/refit/Washing_Machine/results.pkl')
     
-    with open(r'/kaggle/working/NILM-Project/results/redd_lf/microwave/results.pkl', 'wb') as f:
+    with open(r'/kaggle/working/NILM-Project/results/redd_lf/washer_dryer/results.pkl', 'wb') as f:
         pkl.dump(results, f)
     
     #pkl.dump(results,open( fname, "wb" )) 
-        FileLink(r'/kaggle/working/NILM-Project/results/redd_lf/microwave/results.pkl')
+        FileLink(r'/kaggle/working/NILM-Project/results/redd_lf/washer_dryer/results.pkl')
