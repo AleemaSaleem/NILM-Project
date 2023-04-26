@@ -139,7 +139,7 @@ class Trainer:
         #    elif f1 + acc - mre > best_f1_prev + best_acc_prev - best_mre_prev:
         #        self._save_state_dict() 
 
-         _, best_mre, best_acc, _, _, best_f1 = self.validate()
+        _, best_mre, best_acc, _, _, best_f1 = self.validate()
         self._save_state_dict()
         if self.pretrain:
             for epoch in range(self.pretrain_num_epochs):
