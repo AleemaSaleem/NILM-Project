@@ -45,8 +45,8 @@ def get_args():
 
     parser.add_argument('--pretrain',            type = bool,  default = True)
     parser.add_argument('--mask_prob',           type = float, default = 0.25)
-    parser.add_argument('--pretrain_num_epochs', type = int,   default = 3)
-    parser.add_argument('--num_epochs',          type = int,   default = 30)
+    parser.add_argument('--pretrain_num_epochs', type = int,   default = 2)
+    parser.add_argument('--num_epochs',          type = int,   default = 2)
     parser.add_argument('--tau',                 type = float, default = 0.1)
 
 
