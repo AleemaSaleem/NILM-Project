@@ -112,7 +112,7 @@ if __name__ == "__main__":
    
     os.chdir(r'/kaggle/working')
 
-    #fname = trainer.export_root.joinpath('/kaggle/working/NILM-Project/results/refit/Washing_Machine/results.pkl')
+    #fname = trainer.export_root.joinpath('/kaggle/working/NILM-Project/results/uk_dale/kettle/results.pkl')
     
     with open(r'/kaggle/working/NILM-Project/results/uk_dale/washing_machine/results.pkl', 'wb') as f:
         pkl.dump(results, f)
