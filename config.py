@@ -43,10 +43,10 @@ def get_args():
     parser.add_argument('--heads',               type = int,   default = 2)
     parser.add_argument('--n_layers',            type = int,   default = 2)
 
-    parser.add_argument('--pretrain',            type = bool,  default = True)
+    parser.add_argument('--pretrain',            type = bool,  default = False)
     parser.add_argument('--mask_prob',           type = float, default = 0.25)
-    parser.add_argument('--pretrain_num_epochs', type = int,   default = 5)
-    parser.add_argument('--num_epochs',          type = int,   default = 45)
+    parser.add_argument('--pretrain_num_epochs', type = int,   default = 0)
+    parser.add_argument('--num_epochs',          type = int,   default = 3)
     parser.add_argument('--tau',                 type = float, default = 0.1)
 
 
