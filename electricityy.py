@@ -112,10 +112,10 @@ if __name__ == "__main__":
    
     os.chdir(r'/kaggle/working')
 
-    #fname = trainer.export_root.joinpath('/kaggle/working/NILM-Project/results/uk_dale/kettle/results.pkl')
+    #fname = trainer.export_root.joinpath('/kaggle/working/NILM-Project/results/redd_lf/kettle/results.pkl')
     
-    with open(r'/kaggle/working/NILM-Project/results/uk_dale/microwave/results.pkl', 'wb') as f:
+    with open(r'/kaggle/working/NILM-Project/results/redd_lf/microwave/results.pkl', 'wb') as f:
         pkl.dump(results, f)
     
     #pkl.dump(results,open( fname, "wb" )) 
-        FileLink(r'/kaggle/working/NILM-Project/results/uk_dale/microwave/results.pkl')
+        FileLink(r'/kaggle/working/NILM-Project/results/redd_lf/microwave/results.pkl')
