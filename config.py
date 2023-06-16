@@ -14,7 +14,7 @@ def get_args():
     parser.add_argument('--seed',               type = int,   default = 0)
     parser.add_argument('--device',             type = str,   default = 'cpu' ,    choices=['cpu', 'cuda'])
 
-    parser.add_argument('--dataset_code',       type = str,   default = 'uk_dale', choices=['redd_lf', 'uk_dale','refit'])
+    parser.add_argument('--dataset_code',       type = str,   default = 'redd_lf', choices=['redd_lf', 'uk_dale','refit'])
     parser.add_argument('--house_indicies',     type = list,  default = [1, 2, 3, 4, 5, 6])
 
     #REDD Dataset appliance names:    'refrigerator', 'washer_dryer',   'microwave','dishwasher'
@@ -46,7 +46,7 @@ def get_args():
     parser.add_argument('--pretrain',            type = bool,  default = True)
     parser.add_argument('--mask_prob',           type = float, default = 0.25)
     parser.add_argument('--pretrain_num_epochs', type = int,   default = 10)
-    parser.add_argument('--num_epochs',          type = int,   default = 30)
+    parser.add_argument('--num_epochs',          type = int,   default = 40)
     parser.add_argument('--tau',                 type = float, default = 0.1)
 
 
