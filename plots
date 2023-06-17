@@ -1,0 +1,27 @@
+import json
+import pandas as pd
+
+# open the JSON file and load data
+
+with open('//kaggle/input/kettle/test_result.json') as f:
+
+    data= json.load(f)
+
+# convert dictionary to a pandas DataFrame
+
+df = pd.DataFrame.from_dict(data).T
+
+# write the dataframe to an Excel file
+
+df.to_excel('output.xlsx', index=False)
+
+# display the first 5 rows of the dataframe in the console
+
+print(df.head())
+#kettle
+import matplotlib.pyplot as plt
+plt.plot(df[0]["gt"][53300:53800])
+plt.plot(df[0]["pred"][53300:53800])
+
+
+
