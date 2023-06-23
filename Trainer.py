@@ -292,7 +292,7 @@ class Trainer:
         data = {'gt': self.y_curve.tolist(),'pred': self.y_pred_curve.tolist()}
         with open(r'/kaggle/working/NILM-Project/results/redd_lf/dishwasher/test_result.json', 'w') as f:
             json.dump(data, f)
-        FileLink(r'/kaggle/working/NILM-Project/redd_lf/dishwasher/test_result.json')
+        FileLink(r'/kaggle/working/NILM-Project/results/redd_lf/dishwasher/test_result.json')
 
         
 
