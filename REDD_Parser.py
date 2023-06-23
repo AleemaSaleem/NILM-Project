@@ -40,7 +40,9 @@ class Redd_Parser:
             self.x = (self.x - self.x_min)/(self.x_max-self.x_min)
         self.status          = self.compute_status(self.y)
 
-        
+    
+
+    
     def load_data(self):
         for appliance in self.appliance_names:
             assert appliance in ['dishwasher','refrigerator', 'microwave', 'washer_dryer']
@@ -107,7 +109,7 @@ class Redd_Parser:
                     entire_data[entire_data < 5] = 0
                     entire_data                  = entire_data.clip([0] * len(entire_data.columns), self.cutoff, axis=1)
                                 
-                return entire_data.values[:, 0], entire_data.values[:, 1]
+        return entire_data.values[:, 0], entire_data.values[:, 1]
     
     
     def compute_status(self, data):
