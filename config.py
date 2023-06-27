@@ -22,7 +22,7 @@ def get_args():
     #Refit Dataset appliance names:    'Fridge,        'Washing_Machine','TV'
     parser.add_argument('--appliance_names',    type = list,  default = ['washer_dryer'])
 
-    parser.add_argument('--sampling',           type = str,   default = '6s')
+    parser.add_argument('--sampling',           type = str,   default = '8s')
     parser.add_argument('--normalize',          type = str,   default = 'mean',    choices=['mean', 'minmax','none'])
 
     parser.add_argument('--c0',                 type = dict,  default = None)  #temperature value for objective function
