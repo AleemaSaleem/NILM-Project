@@ -2,8 +2,8 @@ import numpy            as     np
 import pandas           as     pd
 from   pathlib          import Path
 from   collections      import defaultdict
-from   NILM_Dataset     import NILMDataset
-from   Pretrain_Dataset import Pretrain_Dataset
+from   NILM_Dataset     import *
+from   Pretrain_Dataset import *
 
 
 class UK_Dale_Parser:
@@ -100,12 +100,12 @@ class UK_Dale_Parser:
             else:
                 entire_data = entire_data.append(house_data, ignore_index=True)
                 
-                entire_data                  = entire_data.dropna().copy()
-                entire_data                  = entire_data[entire_data['aggregate'] > 0] #remove negative values (possible mistakes)
-                entire_data[entire_data < 5] = 0 #remove very low values
-                entire_data                  = entire_data.clip([0] * len(entire_data.columns), self.cutoff, axis=1) # force values to be between 0 and cutoff
-                
-                return entire_data.values[:, 0], entire_data.values[:, 1]
+        entire_data                  = entire_data.dropna().copy()
+        entire_data                  = entire_data[entire_data['aggregate'] > 0] #remove negative values (possible mistakes)
+        entire_data[entire_data < 5] = 0 #remove very low values
+        entire_data                  = entire_data.clip([0] * len(entire_data.columns), self.cutoff, axis=1) # force values to be between 0 and cutoff
+        
+        return entire_data.values[:, 0], entire_data.values[:, 1]
 
     def compute_status(self, data):
 
@@ -181,3 +181,6 @@ class UK_Dale_Parser:
                                  mask_prob=mask_prob
                                 )
         return train, val
+
+
+
