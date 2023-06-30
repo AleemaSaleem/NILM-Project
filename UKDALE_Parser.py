@@ -98,7 +98,7 @@ class UK_Dale_Parser:
                 if len(self.house_indicies) == 1:
                     entire_data = entire_data.reset_index(drop=True)
             else:
-                entire_data = entire_data.append(house_data, ignore_index=True)
+                entire_data = pd.concat([entire_data, house_data], ignore_index=True)
                 
         entire_data                  = entire_data.dropna().copy()
         entire_data                  = entire_data[entire_data['aggregate'] > 0] #remove negative values (possible mistakes)
