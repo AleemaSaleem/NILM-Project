@@ -20,7 +20,7 @@ def get_args():
     #REDD Dataset appliance names:    'refrigerator', 'washer_dryer',   'microwave','dishwasher'
      #UK Dale Dataset appliance names: 'fridge',       'washing_machine','microwave','dishwasher','kettle','toaster'
     #Refit Dataset appliance names:    'Fridge,        'Washing_Machine','TV'
-    parser.add_argument('--appliance_names',    type = list,  default = ['dishwasher'])
+    parser.add_argument('--appliance_names',    type = list,  default = ['dishwaser'])
 
     parser.add_argument('--sampling',           type = str,   default = '1s')
     parser.add_argument('--normalize',          type = str,   default = 'mean',    choices=['mean', 'minmax','none'])
@@ -93,31 +93,31 @@ def update_preprocessing_parameters(args):
             'refrigerator': 400,
             'washer_dryer': 3500,
             'microwave'   : 1800,
-            'dishwasher'  : 1200
+            'dishwaser'  : 1200
         }
         args.threshold = {
             'refrigerator': 50,
             'washer_dryer': 20,
             'microwave'   : 200,
-            'dishwasher'  : 10
+            'dishwaser'  : 10
         }
         args.min_on = {
             'refrigerator': 10,
             'washer_dryer': 300,
             'microwave'   : 2,
-            'dishwasher'  : 300
+            'dishwaser'  : 300
         }
         args.min_off = {
             'refrigerator': 2,
             'washer_dryer': 26,
             'microwave'   : 5,
-            'dishwasher'  : 300
+            'dishwaser'  : 300
         }
         args.c0 = {
             'refrigerator': 1e-6,
             'washer_dryer': 0.001,
             'microwave'   : 1.,
-            'dishwasher'  : 1.
+            'dishwaser'  : 1.
         }
     elif args.dataset_code == 'uk_dale':    
         args.cutoff = {
@@ -126,7 +126,7 @@ def update_preprocessing_parameters(args):
             'fridge'         : 300,
             'washing_machine': 2500,
             'microwave'      : 3000,
-            'dishwasher'     : 2500,
+            'dishwaser'     : 2500,
             'toaster'        : 3100
         }
         args.threshold = {
@@ -134,7 +134,7 @@ def update_preprocessing_parameters(args):
             'fridge'         : 50,
             'washing_machine': 20,
             'microwave'      : 200,
-            'dishwasher'     : 10,
+            'dishwaser'     : 10,
             'toaster'        : 1000
 
         }
@@ -143,7 +143,7 @@ def update_preprocessing_parameters(args):
             'fridge'         : 10,
             'washing_machine': 300,
             'microwave'      : 2,
-            'dishwasher'     : 300,
+            'dishwaser'     : 300,
             'toaster'        : 2000
 
         }
@@ -152,7 +152,7 @@ def update_preprocessing_parameters(args):
             'fridge'         : 2,
             'washing_machine': 26,
             'microwave'      : 5,
-            'dishwasher'     : 300,
+            'dishwaser'     : 300,
             'toaster'        : 0
 
         }
@@ -161,7 +161,7 @@ def update_preprocessing_parameters(args):
             'fridge'         : 1e-6,
             'washing_machine': 0.01,
             'microwave'      : 1.,
-            'dishwasher'     : 1.,
+            'dishwaser'     : 1.,
             'toaster'        : 1.
 
         }
