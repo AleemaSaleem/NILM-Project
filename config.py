@@ -14,15 +14,15 @@ def get_args():
     parser.add_argument('--seed',               type = int,   default = 0)
     parser.add_argument('--device',             type = str,   default = 'cuba' ,    choices=['cpu', 'cuda'])
 
-    parser.add_argument('--dataset_code',       type = str,   default = 'redd_lf', choices=['redd_lf', 'uk_dale','refit'])
-    parser.add_argument('--house_indicies',     type = list,  default = [1, 2, 3, 4, 5, 6])
+    parser.add_argument('--dataset_code',       type = str,   default = 'uk_dale', choices=['redd_lf', 'uk_dale','refit'])
+    parser.add_argument('--house_indicies',     type = list,  default = [1, 2, 3, 4, 5 ])
 
     #REDD Dataset appliance names:    'refrigerator', 'washer_dryer',   'microwave','dishwasher'
      #UK Dale Dataset appliance names: 'fridge',       'washing_machine','microwave','dishwasher','kettle','toaster'
     #Refit Dataset appliance names:    'Fridge,        'Washing_Machine','TV'
-    parser.add_argument('--appliance_names',    type = list,  default = ['washer_dryer'])
+    parser.add_argument('--appliance_names',    type = list,  default = ['washing_machine'])
 
-    parser.add_argument('--sampling',           type = str,   default = '1s')
+    parser.add_argument('--sampling',           type = str,   default = '6s')
     parser.add_argument('--normalize',          type = str,   default = 'mean',    choices=['mean', 'minmax','none'])
 
     parser.add_argument('--c0',                 type = dict,  default = None)  #temperature value for objective function
@@ -46,7 +46,7 @@ def get_args():
     parser.add_argument('--pretrain',            type = bool,  default = True)
     parser.add_argument('--mask_prob',           type = float, default = 0.25)
     parser.add_argument('--pretrain_num_epochs', type = int,   default = 10)
-    parser.add_argument('--num_epochs',          type = int,   default = 10)
+    parser.add_argument('--num_epochs',          type = int,   default = 30)
     parser.add_argument('--tau',                 type = float, default = 0.1)
 
 
