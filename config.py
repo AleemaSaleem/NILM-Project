@@ -43,10 +43,10 @@ def get_args():
     parser.add_argument('--heads',               type = int,   default = 2)
     parser.add_argument('--n_layers',            type = int,   default = 2)
 
-    parser.add_argument('--pretrain',            type = bool,  default = True)
+    parser.add_argument('--pretrain',            type = bool,  default = False)
     parser.add_argument('--mask_prob',           type = float, default = 0.25)
-    parser.add_argument('--pretrain_num_epochs', type = int,   default = 10)
-    parser.add_argument('--num_epochs',          type = int,   default = 30)
+    parser.add_argument('--pretrain_num_epochs', type = int,   default = 0)
+    parser.add_argument('--num_epochs',          type = int,   default = 40)
     parser.add_argument('--tau',                 type = float, default = 0.1)
 
 
@@ -63,9 +63,9 @@ def get_args():
     
     args = parser.parse_args()
 
-    args.ukdale_location = r'/kaggle/input/nilm-data/ELECTRIcity_NILM-main/data/UK_DALE'
-    args.redd_location   = r'/kaggle/input/nilm-data/ELECTRIcity_NILM-main/data/REDD'
-    args.refit_location  = r'/kaggle/input/nilm-data/ELECTRIcity_NILM-main/data/Refit'
+    args.ukdale_location = r'/kaggle/input/d/alimasaleem/nilm-data/nilm_data/ELECTRIcity_NILM-main/data/UK_DALE'
+    args.redd_location   = r'/kaggle/input/d/alimasaleem/nilm-data/nilm_data/ELECTRIcity_NILM-main/data/REDD'
+    args.refit_location  = r'/kaggle/input/d/alimasaleem/nilm-data/nilm_data/ELECTRIcity_NILM-main/data/Refit'
 
 
     args = update_preprocessing_parameters(args)
