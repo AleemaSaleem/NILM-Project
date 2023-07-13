@@ -55,7 +55,7 @@ class UK_Dale_Parser:
         directory = Path(self.data_location)
         
         for house_id in self.house_indicies:
-            house_folder = directory.joinpath('/kaggle/input/d/alimasaleem/nilm-data/ELECTRIcity_NILM-main/data/UK_DALE/house_' + str(house_id))
+            house_folder = directory.joinpath('/kaggle/input/nilm-data/ELECTRIcity_NILM-main/data/UK_DALE/house_' + str(house_id))
             house_label  = pd.read_csv(house_folder.joinpath('labels.dat'),    sep=' ', header=None)    
             house_data   = pd.read_csv(house_folder.joinpath('channel_1.dat'), sep=' ', header=None) #aggregate
             
