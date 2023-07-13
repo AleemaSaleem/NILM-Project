@@ -80,7 +80,7 @@ if __name__ == "__main__":
 
     dataloader = NILMDataloader(args, ds_parser)
     _, test_loader = dataloader.get_dataloaders()
-    mre, mae, acc, prec, recall, f1 = trainer.test(test_loader)
+    mae, mre, acc, prec, recall, f1 = trainer.test(test_loader)
     print('Mean Accuracy:', acc)
     print('Mean F1-Score:', f1)
     print('MAE:', mae)
