@@ -46,8 +46,8 @@ class Refit_Parser:
 
     def load_data(self):
         for house_idx in self.house_indicies:
-            filename  = '/kaggle/input/nilm_data/ELECTRIcity_NILM-main/data/Refit/data/House'+str(house_idx)+'.csv'
-            labelname = '/kaggle/input/nilm_data/ELECTRIcity_NILM-main/data/Refit/Labels/House'+str(house_idx)+'.txt'
+            filename  = '/kaggle/input/nilm-data/ELECTRIcity_NILM-main/data/Refit/data/House'+str(house_idx)+'.csv'
+            labelname = '/kaggle/input/nilm-data/ELECTRIcity_NILM-main/data/Refit/Labels/House'+str(house_idx)+'.txt'
             house_data_loc = self.data_location/filename
 
             with open(self.labels_location/labelname) as f:
