@@ -20,7 +20,7 @@ def get_args():
     #REDD Dataset appliance names:    'refrigerator', 'washer_dryer',   'microwave','dishwaser'
      #UK Dale Dataset appliance names: 'fridge',       'washing_machine','microwave','dishwasher','kettle','toaster'
     #Refit Dataset appliance names:    'Fridge,        'Washing_Machine','TV'
-    parser.add_argument('--appliance_names',    type = list,  default = ['fridge'])
+    parser.add_argument('--appliance_names',    type = list,  default = ['washing_machine'])
 
     parser.add_argument('--sampling',           type = str,   default = '6s')
     parser.add_argument('--normalize',          type = str,   default = 'mean',    choices=['mean', 'minmax','none'])
