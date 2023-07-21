@@ -74,7 +74,7 @@ if __name__ == "__main__":
         args.house_indicies = [5]
         ds_parser = Refit_Parser(args)
     elif args.dataset_code == 'uk_dale':
-        args.house_indicies = [2]
+        args.house_indicies = [3]
         ds_parser = UK_Dale_Parser(args, stats)
 
 
@@ -114,8 +114,8 @@ if __name__ == "__main__":
 
     #fname = trainer.export_root.joinpath('/kaggle/working/NILM-Project/results/redd_lf/washer_dryer/results.pkl')
     
-    with open(r'/kaggle/working/NILM-Project/results/redd_lf/dishwaser/results.pkl', 'wb') as f:
+    with open(r'/kaggle/working/NILM-Project/results/ukdale/fridge/results.pkl', 'wb') as f:
         pkl.dump(results, f)
     
     #pkl.dump(results,open( fname, "wb" )) 
-        FileLink(r'/kaggle/working/NILM-Project/results/redd_lf/dishwaser/results.pkl')
+        FileLink(r'/kaggle/working/NILM-Project/results/ukdale/fridge/results.pkl')
