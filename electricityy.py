@@ -21,7 +21,7 @@ if __name__ == "__main__":
     setup_seed(args.seed)
 
     if args.dataset_code == 'redd_lf':
-        args.house_indicies = [1, 3, 4, 5, 6]
+        args.house_indicies = [1, 2, 3, 4, 6]
         ds_parser = Redd_Parser(args)
     elif args.dataset_code == 'uk_dale':
         args.house_indicies = [1, 3, 4, 5]
@@ -67,7 +67,7 @@ if __name__ == "__main__":
     x_std  = trainer.x_std.detach().cpu().numpy()
     stats  = (x_mean,x_std)
     if args.dataset_code == 'redd_lf':
-        args.house_indicies = [2]
+        args.house_indicies = [5]
         ds_parser = Redd_Parser(args, stats)
     
     elif args.dataset_code == 'refit':
