@@ -21,7 +21,7 @@ if __name__ == "__main__":
     setup_seed(args.seed)
 
     if args.dataset_code == 'redd_lf':
-        args.house_indicies = [1, 2, 3, 4,5, 6]
+        args.house_indicies = [ 2, 3, 4,5, 6]
         ds_parser = Redd_Parser(args)
     elif args.dataset_code == 'uk_dale':
         args.house_indicies = [1, 3, 4, 5]
