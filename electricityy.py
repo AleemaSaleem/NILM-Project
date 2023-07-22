@@ -71,7 +71,7 @@ if __name__ == "__main__":
         ds_parser = Redd_Parser(args, stats)
     
     elif args.dataset_code == 'refit':
-        args.house_indicies = [3]
+        args.house_indicies = [5]
         ds_parser = Refit_Parser(args)
     elif args.dataset_code == 'uk_dale':
         args.house_indicies = [1]
@@ -114,8 +114,8 @@ if __name__ == "__main__":
 
     #fname = trainer.export_root.joinpath('/kaggle/working/NILM-Project/results/redd_lf/washer_dryer/results.pkl')
     
-    with open(r'/kaggle/working/NILM-Project/results/refit/Washing_Machine/results.pkl', 'wb') as f:
+    with open(r'/kaggle/working/NILM-Project/results/refit/Fridge/results.pkl', 'wb') as f:
         pkl.dump(results, f)
     
     #pkl.dump(results,open( fname, "wb" )) 
-        FileLink(r'/kaggle/working/NILM-Project/results/refit/Washing_Machine/results.pkl')
+        FileLink(r'/kaggle/working/NILM-Project/results/refit/Fridge/results.pkl')
