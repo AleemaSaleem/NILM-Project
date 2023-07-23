@@ -63,9 +63,9 @@ def get_args():
     
     args = parser.parse_args()
 
-    args.ukdale_location = r'/kaggle/input/d/alimasaleem/nilm-data/ELECTRIcity_NILM-main/data/UK_DALE'
-    args.redd_location   = r'/kaggle/input/d/alimasaleem/nilm-data/ELECTRIcity_NILM-main/data/REDD'
-    args.refit_location  = r'/kaggle/input/d/alimasaleem/nilm-data/ELECTRIcity_NILM-main/data/Refit'
+    args.ukdale_location = r'/kaggle/input/nilm-data/ELECTRIcity_NILM-main/data/UK_DALE'
+    args.redd_location   = r'/kaggle/input/nilm-data/ELECTRIcity_NILM-main/data/REDD'
+    args.refit_location  = r'/kaggle/input/nilm-data/ELECTRIcity_NILM-main/data/Refit'
 
 
     args = update_preprocessing_parameters(args)
