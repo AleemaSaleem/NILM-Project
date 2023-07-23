@@ -74,7 +74,7 @@ if __name__ == "__main__":
         args.house_indicies = [5]
         ds_parser = Refit_Parser(args)
     elif args.dataset_code == 'uk_dale':
-        args.house_indicies = [1]
+        args.house_indicies = [3]
         ds_parser = UK_Dale_Parser(args, stats)
 
 
