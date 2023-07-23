@@ -67,7 +67,7 @@ if __name__ == "__main__":
     x_std  = trainer.x_std.detach().cpu().numpy()
     stats  = (x_mean,x_std)
     if args.dataset_code == 'redd_lf':
-        args.house_indicies = [5]
+        args.house_indicies = [1]
         ds_parser = Redd_Parser(args, stats)
     
     elif args.dataset_code == 'refit':
